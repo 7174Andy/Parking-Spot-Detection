@@ -5,4 +5,5 @@ datasets/coco-2017/raw/
 !datasets/coco-2017/validation/labels.json
 !datasets/coco-2017/validation/data/000000000139.jpg
 
-datasets/yolo-datasets/
+datasets/yolo-datasets/images
+datasets/yolo-datasets/labels
