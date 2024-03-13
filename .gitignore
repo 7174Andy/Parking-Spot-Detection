@@ -3,7 +3,6 @@ datasets/coco-2017/validation/*.json
 datasets/coco-2017/raw/
 
 !datasets/coco-2017/validation/labels.json
-!datasets/coco-2017/validation/data/000000397133.jpg
 !datasets/coco-2017/validation/data/000000000139.jpg
 
 datasets/yolo-datasets/
