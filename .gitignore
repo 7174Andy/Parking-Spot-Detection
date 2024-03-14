@@ -1,9 +1,11 @@
 datasets/coco-2017/validation/data/*
 datasets/coco-2017/validation/*.json
 datasets/coco-2017/raw/
+datasets/coco-2017/train/data/*
 
 !datasets/coco-2017/validation/labels.json
 !datasets/coco-2017/validation/data/000000000139.jpg
+!datasets/coco-2017/train/labels.json
 
-datasets/yolo-datasets/images
-datasets/yolo-datasets/labels
+datasets/yolo-datasets/train/*
+datasets/yolo-datasets/validation/*

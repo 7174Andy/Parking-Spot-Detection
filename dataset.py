@@ -1,23 +1,19 @@
 import fiftyone as fo
 import fiftyone.zoo as foz
 import json
-import cv2
 import os
-import matplotlib.pyplot as plt
 import numpy as np
 import shutil
 
-input_path = "datasets/coco-2017/validation"
 output_path = "datasets/yolo-datasets/images"
-
-file_names = []
-f = open("datasets/coco-2017/validation/labels.json")
-data = json.load(f)
-f.close()
 
 
 # Load the images from the folder
-def load_images_from_folder(folder):
+def load_images_from_folder(folder, output_path):
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+
+    file_names = []
     for filename in os.listdir(folder):
         source = os.path.join(folder, filename)
         destination = f"{output_path}/{filename}"
@@ -29,8 +25,10 @@ def load_images_from_folder(folder):
 
         file_names.append(filename)
 
+    return file_names
 
-def get_img_annotation(img_id):
+
+def get_img_annotation(img_id, data):
     img_annotation = []
     isFound = False
     for ann in data["annotations"]:
@@ -47,10 +45,10 @@ def download_coco_dataset():
     # Download the COCO 2017 Dataset
     dataset = foz.load_zoo_dataset(
         "coco-2017",
-        splits=["validation", "training"],
+        splits=["validation", "train"],
         label_types=["detections"],
         dataset_dir="./datasets/coco-2017",
-        max_samples=1000,
+        max_samples=100,
     )
 
     # Visualize the dataset through the App
@@ -60,28 +58,38 @@ def download_coco_dataset():
     session.dataset = dataset
 
 
-def get_img_by_filename(filename):
+def get_img_by_filename(data, filename):
     for img in data["images"]:
         if img["file_name"] == filename:
             return img
 
 
-def convert_labels():
-    load_images_from_folder(input_path + "/data")
+def convert_labels(json_dir, input_path, output_path):
+    # Open the JSON file and load the data
+    f = open(json_dir)
+    data = json.load(f)
+    f.close()
+
+    file_names = load_images_from_folder(input_path + "/data", output_path + "/images")
     print("Finished loading images from the folder")
+
     for filename in file_names:
         # Extract images
-        image = get_img_by_filename(filename)
+        print(filename)
+        image = get_img_by_filename(data=data, filename=filename)
         img_id = image["id"]
         img_width = image["width"]
         img_height = image["height"]
 
         # Get annotations
-        img_annotation = get_img_annotation(img_id)
+        img_annotation = get_img_annotation(
+            img_id=img_id,
+            data=data,
+        )
         print(f"Processing {filename}...")
 
         if img_annotation:
-            file_label = open(f"datasets/yolo-datasets/labels/{filename}.txt", "w")
+            file_label = open(f"{output_path}/labels/{filename}.txt", "w")
 
             for ann in img_annotation:
                 current_category = ann["category_id"] - 1
@@ -117,8 +125,18 @@ def convert_labels():
 
 
 def main():
-    # download_coco_dataset()
-    convert_labels()
+    # Download COCO Dataset
+    download_coco_dataset()
+    convert_labels(
+        json_dir="datasets/coco-2017/validation/labels.json",
+        input_path="datasets/coco-2017/validation",
+        output_path="datasets/yolo-datasets/validation",
+    )
+    convert_labels(
+        json_dir="datasets/coco-2017/train/labels.json",
+        input_path="datasets/coco-2017/train",
+        output_path="datasets/yolo-datasets/train",
+    )
 
 
 if __name__ == "__main__":

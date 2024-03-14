@@ -2,11 +2,15 @@
     "name": "coco-2017",
     "zoo_dataset": "fiftyone.zoo.datasets.base.COCO2017Dataset",
     "dataset_type": "fiftyone.types.dataset_types.COCODetectionDataset",
-    "num_samples": 1000,
+    "num_samples": 200,
     "downloaded_splits": {
         "validation": {
             "split": "validation",
-            "num_samples": 1000
+            "num_samples": 100
+        },
+        "train": {
+            "split": "train",
+            "num_samples": 100
         }
     },
     "classes": [
