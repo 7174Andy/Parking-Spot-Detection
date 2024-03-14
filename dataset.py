@@ -10,6 +10,15 @@ output_path = "datasets/yolo-datasets/images"
 
 # Load the images from the folder
 def load_images_from_folder(folder, output_path):
+    """Download the COCO dataset and convert the labels
+
+    Args:
+        folder (str): The folder path where the images are located
+        output_path (str): The path where the images will be copied to
+
+    Returns:
+        list: a list of file names
+    """
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
@@ -29,6 +38,15 @@ def load_images_from_folder(folder, output_path):
 
 
 def get_img_annotation(img_id, data):
+    """Find the annotation of the given image ID
+
+    Args:
+        img_id (str): The image ID
+        data (dict): The JSON data extracted by the COCO dataset
+
+    Returns:
+        dict: The annotation of the given image ID
+    """
     img_annotation = []
     isFound = False
     for ann in data["annotations"]:
@@ -41,14 +59,20 @@ def get_img_annotation(img_id, data):
         return None
 
 
-def download_coco_dataset():
+def download_coco_dataset(sample_size=1000):
+    """Download the COCO dataset and visualize it through the App
+
+    Args:
+        sample_size (int, optional): Number of images needed for
+        each training and validation. Defaults to 1000.
+    """
     # Download the COCO 2017 Dataset
     dataset = foz.load_zoo_dataset(
         "coco-2017",
         splits=["validation", "train"],
         label_types=["detections"],
         dataset_dir="./datasets/coco-2017",
-        max_samples=100,
+        max_samples=sample_size,
     )
 
     # Visualize the dataset through the App
@@ -59,12 +83,28 @@ def download_coco_dataset():
 
 
 def get_img_by_filename(data, filename):
+    """get the image by the given filename
+
+    Args:
+        data (dict): The JSON data extracted by the COCO dataset
+        filename (str): The filename of the image
+
+    Returns:
+        dict: The image with the given filename
+    """
     for img in data["images"]:
         if img["file_name"] == filename:
             return img
 
 
 def convert_labels(json_dir, input_path, output_path):
+    """Convert the labels from COCO format to YOLO format
+
+    Args:
+        json_dir (str): label.json directory
+        input_path (str): file directory of the images to be converted
+        output_path (str): file directory of the converted images
+    """
     # Open the JSON file and load the data
     f = open(json_dir)
     data = json.load(f)
@@ -88,6 +128,7 @@ def convert_labels(json_dir, input_path, output_path):
         )
         print(f"Processing {filename}...")
 
+        # Create the labels folder
         if img_annotation:
             file_label = open(f"{output_path}/labels/{filename}.txt", "w")
 
@@ -127,6 +168,8 @@ def convert_labels(json_dir, input_path, output_path):
 def main():
     # Download COCO Dataset
     download_coco_dataset()
+
+    # Convert the labels
     convert_labels(
         json_dir="datasets/coco-2017/validation/labels.json",
         input_path="datasets/coco-2017/validation",
