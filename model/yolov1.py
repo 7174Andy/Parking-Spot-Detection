@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
-import torch.utils.model_zoo as model_zoo
 import torchvision
 import torchvision.transforms as transforms
 import torchvision.transforms as T
 import numpy as np
+import torch.utils.model_zoo as model_zoo
+
 
 # Utilizing the DarkNet architecture as a base for YOLOv1
 class YOLOv1(nn.Module):
