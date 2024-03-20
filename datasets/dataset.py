@@ -1,13 +1,47 @@
 import torch
 from torch.utils.data import Dataset
+from PIL import Image
+import os
 
 
 class ParkingSpotDataset(Dataset):
-    def __init__(self, csv_file, data_dir, transform=None):
-        pass
+    def __init__(self, data_dir, S=7, B=2, C=2, transform=None):
+        self.data_dir = data_dir
+        self.S = S
+        self.B = B
+        self.C = C
+        self.transform = transform
+
+        self.bboxes = []
+        self.labels = []
+
+        files = os.listdir(data_dir)
+        label_files = [file for file in files if os.path.splitext(file)[1] == ".txt"]
+
+        for label_file in label_files:
+            bbox = []
+            labels = []
+            with open(os.path.join(data_dir, label_file), "r") as f:
+                lines = f.readlines()
+                for line in lines:
+                    class_label, x, y, w, h = map(float, line.strip().split())
+                    bbox.append([x, y, w, h])
+                    labels.append(int(class_label))
+
+            self.bboxes.append(torch.tensor(bbox, dtype=torch.float32))
+            self.labels.append(torch.tensor(labels, dtype=torch.long))
 
     def __len__(self):
-        return len(self.data)
+        return len(self.bboxes)
 
     def __getitem__(self, idx):
         pass
+
+
+def __main__():
+    dataset = ParkingSpotDataset(data_dir="data/Parking Space.v4i.darknet/train")
+    print(len(dataset))
+
+
+if __name__ == "__main__":
+    __main__()
