@@ -1,9 +1,11 @@
-import fiftyone as fo
-import fiftyone.zoo as foz
+import torch
 import json
 import os
 import numpy as np
 import shutil
+import torchvision
+import torchvision.transforms.functional as TF
+
 
 from torch.utils.data import DataLoader
 from torchvision import transforms
@@ -40,4 +42,18 @@ class ACPDS:
         return len(self.f_name)
 
     def __getitem__(self, idx):
-        pass
+        # load image
+        img_path = os.path.join(self.dataset_path, "images", self.f_name[idx])
+        img = torchvision.io.read_image(img_path)
+        if self.res is not None:
+            img = TF.resize(img, self.res)
+
+        # load occupancy
+        occupancy = self.occupancy[idx]
+        occupancy = torch.tensor(occupancy, dtype=torch.float32)
+
+        # load rois
+        rois = self.rois_list[idx]
+        rois = torch.tensor(rois, dtype=torch.float32)
+
+        return img, rois, occupancy
