@@ -75,12 +75,11 @@ class ParkingSpotDataset(Dataset):
 
         bboxes = self.bboxes[idx]
         labels = self.labels[idx]
-        target = self.to_prediction_tensor(bboxes, labels)
 
-        if self.transform:
-            image = self.transform(image)
+        bboxes = torch.tensor(bboxes, dtype=torch.float32)
+        labels = torch.tensor(labels, dtype=torch.long)
 
-        return image, target
+        return image, bboxes, labels
 
 
 def __main__():
