@@ -41,11 +41,11 @@ def plot_image(image, boxes, labels):
     # box[1] is y midpoint, box[3] is height
 
     # Create a Rectangle potch
-    for box, labels in zip(boxes, labels):
+    for box, label in zip(boxes, labels):
         assert len(box) == 4, "Got more values than in x, y, w, h, in a box!"
         upper_left_x = box[0] - box[2] / 2
         upper_left_y = box[1] - box[3] / 2
-        if labels == 0:
+        if label == 1:
             color = "r"
         else:
             color = "g"
@@ -55,7 +55,7 @@ def plot_image(image, boxes, labels):
             box[3] * height,
             linewidth=1,
             edgecolor=color,
-            facecolor=color,
+            facecolor="none",
         )
         # Add the patch to the Axes
         ax.add_patch(rect)
