@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711074678 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711074679 0
-  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1672695103 3929 8c07b5696c90ef0126be51f131a93018 ""
+["pdflatex"] 1711141418 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711141418 0
+  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711141417 4001 a6b730f85e61faad9db19323093de909 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -79,9 +79,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700360065 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700360044 7883464 c5f048a159ffbb5241c94fe1f9f6961d ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "main.aux" 1711074679 1102 4dac31cdebf74b018ad17d35bbabf670 "pdflatex"
-  "main.out" 1711074679 536 3917e2c486a85fe082acff3cfa39393f "pdflatex"
-  "main.tex" 1672695103 3929 8c07b5696c90ef0126be51f131a93018 ""
+  "main.aux" 1711141418 1102 4dac31cdebf74b018ad17d35bbabf670 "pdflatex"
+  "main.out" 1711141418 536 3917e2c486a85fe082acff3cfa39393f "pdflatex"
+  "main.tex" 1711141417 4001 a6b730f85e61faad9db19323093de909 ""
   "neurips_2020.sty" 1653961648 11204 129041f8a44f0dbbba34284ed200c8b0 ""
   (generated)
   "main.aux"
