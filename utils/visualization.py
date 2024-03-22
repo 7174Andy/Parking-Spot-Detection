@@ -1,10 +1,13 @@
 import torch
-# import torchvision
-# import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from utils.detection import cellboxes_to_boxes, non_max_suppression
+import torchvision
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
 
 def yolo2bbox(bboxes, width, height):
