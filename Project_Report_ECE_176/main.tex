@@ -61,13 +61,17 @@
 
 \section{Introduction}
 
-In this section, you need to describe the problem you want to solve. Besides You can include the following things(You do not have to cover all of them):
-\begin{itemize}
-    \item the motivation of solving this problem.
-    \item your understanding of the problem.
-    \item some key parts of the approach you propose to solve the problem.
-    \item a few sentences summarizing your results.
-\end{itemize}
+Finding a vacant parking space in a given lot is a tedious and costly task: a person must drive through the whole parking lot in order to find a vacant space. This uneffective process will 
+waste gasoline and time while searching for a parking space. Furtermore, this will cause congestion in the parking lot. Therefore, by displaying the occupancy of spaces in a given parking lot
+will significantly reduce the time cost, traffic congestion, and gasoline consumption. YOLO-Parking will aid this wasteful process by displaying vacant and
+occupied parking spaces. Although there are existing methods to detect the occupancy of a parking space, such as car detector on every parking space and other object detector architectures 
+that detects the occupancy, most of them are expensive or slow in detecting parking spots\cite{DBLP:journals/corr/abs-2107-12207}. Furthermore, there are several traditional models like R-CNN and 
+Faster R-CNN models to detect the instance segmentation of a vacant parking spot, but they are slow in detection for videos. 
+
+In this paper, we propose a new model to detect vacant parking spots: You Only Look Once (YOLO). YOLO architecture is one of the fastest architecture that accurately performs object detection \cite{redmon2016look}. 
+Additionally, several cameras mounted in the parking lot to detect vacancy of a space is relatively cheaper than placing a car detector on every parking space in a parking lot \cite{DBLP:journals/corr/abs-2107-12207}. 
+
+
 
 \section{Related Work}
 
@@ -101,8 +105,7 @@ In this section, You should include the following things:
 
 You should also include a video recording a presentation (with motivation, approach, results) for this project.
 
-\section*{References}
-
-In this section, you should include reference to the work you mentioned. Any choice of citation style is acceptable as long as you are consistent.
+\bibliographystyle{plain}
+\bibliography{bibliography.bib}
 
 \end{document}
