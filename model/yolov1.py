@@ -4,12 +4,14 @@ import torchvision
 import torchvision.transforms as transforms
 import torchvision.transforms as T
 import numpy as np
-import torch.utils.model_zoo as model_zoo
+from torchvision import models
+from torch.utils import model_zoo
+# from detectron2 import model_zoo
 
 
 # Utilizing the DarkNet architecture as a base for YOLOv1
 class YOLOv1(nn.Module):
-    def __init__(self, grid, b_box, n_class):
+    def __init__(self, S, B, C):
         super(YOLOv1, self).__init__()
         # Initializing the pre-trained weights, using VGG11, for YOLOv1 arthitecture
         self.backbone = nn.Module.load_state_dict(model_zoo.load_url(
@@ -31,7 +33,7 @@ class YOLOv1(nn.Module):
             nn.Linear(1024, 4096),
             nn.Dropout(0.5),
             nn.ReLU(),
-            nn.Linear(4096, grid * grid * (n_class + b_box * 5))
+            nn.Linear(4096, S * S * (C + B * 5))
         )
         
     def forward(self, x):
@@ -52,4 +54,6 @@ class YOLOv1(nn.Module):
                 initial_weight = self.get_upsampling_weight(
                     m.in_channels, m.out_channels, m.kernel_size[0])
                 m.weight.data.copy_(initial_weight)    
+
+
         
