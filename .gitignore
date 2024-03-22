@@ -1,6 +1,5 @@
 data/*
+
 .DS_Store
 
 /utils/__pycache__/*
-
-/Project_Report_ECE_176/*
