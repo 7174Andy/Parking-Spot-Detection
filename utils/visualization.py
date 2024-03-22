@@ -72,7 +72,6 @@ def get_bboxes(
     model,
     iou_threshold,
     threshold,
-    pred_format="cells",
     box_format="midpoint",
     device="cuda",
 ):
@@ -83,8 +82,10 @@ def get_bboxes(
     model.eval()
     train_idx = 0
 
-    for batch_idx, (x, labels) in enumerate(loader):
+    for x, labels in loader:
+
         x = x.to(device)
+
         labels = labels.to(device)
 
         with torch.no_grad():
@@ -102,8 +103,7 @@ def get_bboxes(
                 box_format=box_format,
             )
 
-
-            #if batch_idx == 0 and idx == 0:
+            # if batch_idx == 0 and idx == 0:
             #    plot_image(x[idx].permute(1,2,0).to("cpu"), nms_boxes)
             #    print(nms_boxes)
 

@@ -3,6 +3,8 @@ from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 import os
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class ParkingSpotDataset(Dataset):
@@ -36,32 +38,30 @@ class ParkingSpotDataset(Dataset):
             self.bboxes.append(torch.tensor(bbox, dtype=torch.float32))
             self.labels.append(torch.tensor(labels, dtype=torch.long))
 
-    def to_prediction_tensor(self, bboxes, labels):
-        label_matrix = torch.zeros((self.S, self.S, self.C + 5 * self.B))
+    def to_label_matrix(self, image, bboxes, labels):
+        image = cv2.resize(image, (self.image_size, self.image_size))
+
+        # plt.imshow(image)
+        # print(image.shape)
+
+        label_matrix = torch.zeros((self.S, self.S, self.C + 5))
 
         for box, label in zip(bboxes, labels):
-            class_label = label
-            x, y, w, h = box.tolist()
-            class_label = int(class_label)
+            # Extracting the x, y, h, w values from the box
+            x1, y1, h, w = box
+            cls = label
 
-            # Convert to grid cell coordinates.
-            i, j = int(self.S * y), int(self.S * x)
-            x_cell, y_cell = self.S * x - j, self.S * y - i
+            loc = [self.S * x1, self.S * y1]
+            loc_i, loc_j = int(loc[1]), int(loc[0])
+            y = loc[1] - loc_i
+            x = loc[0] - loc_j
 
-            # Convert to width and height coordinates.
-            width_cell, height_cell = (
-                w * self.S,
-                h * self.S,
-            )
-
-            # If the cell is already occupied, we don't want to overwrite it.
-            if label_matrix[i, j, self.C] == 0:
-                label_matrix[i, j, self.C] = 1
-                box_coordinates = torch.tensor(
-                    [x_cell, y_cell, width_cell, height_cell], dtype=torch.float32
+            if label_matrix[loc_i, loc_j, self.C] == 0:
+                label_matrix[loc_i, loc_j, self.C] = 1
+                label_matrix[loc_i, loc_j, self.C + 1 : self.C + 5] = torch.tensor(
+                    [x, y, h, w]
                 )
-                label_matrix[i, j, self.C + 1 : self.C + 5] = box_coordinates
-                label_matrix[i, j, class_label] = 1
+                label_matrix[loc_i, loc_j, cls] = 1
 
         return label_matrix
 
@@ -70,16 +70,14 @@ class ParkingSpotDataset(Dataset):
 
     def __getitem__(self, idx):
         image_name = self.image_names[idx]
-        image = cv2.imread(os.path.join(self.data_dir, image_name))
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = cv2.imread(os.path.join(self.data_dir, image_name), cv2.IMREAD_COLOR)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
+        bboxes = self.bboxes[idx].clone()
+        labels = self.labels[idx].clone()
 
-        bboxes = self.bboxes[idx]
-        labels = self.labels[idx]
+        label_matrix = self.to_label_matrix(image, bboxes, labels)
 
-        bboxes = torch.tensor(bboxes, dtype=torch.float32)
-        labels = torch.tensor(labels, dtype=torch.long)
-
-        return image, bboxes, labels
+        return image, label_matrix
 
 
 def __main__():

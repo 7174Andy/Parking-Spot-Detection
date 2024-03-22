@@ -15,15 +15,17 @@ class YOLOv1(nn.Module):
     def __init__(self, S, B, C):
         super(YOLOv1, self).__init__()
         # Initializing the pre-trained weights, using VGG11, for YOLOv1 arthitecture
-        weights = model_zoo.load_url(
-            "https://download.pytorch.org/models/vgg11_bn-6002323d.pth"
-        )
-        print(type(weights))
-        self.backbone = nn.Module.load_state_dict(weights)
+        backbone = models.vgg11_bn(pretrained=True)
+        # weights = model_zoo.load_url(
+        #     url="https://download.pytorch.org/models/vgg11_bn-6002323d.pth",
+        #     progress=True,
+        # )
+        # self.backbone.load_state_dict(state_dict=weights, strict=False)
+        self.backbone = nn.Sequential(*list(backbone.features.children())[:-1])
 
         # Learning parameters for parking space
         self.yolo_head = nn.Sequential(
-            nn.Conv2d(1024, 1024, kernel_size=3),
+            nn.Conv2d(512, 1024, kernel_size=3),
             nn.ReLU(),
             nn.Conv2d(1024, 1024, kernel_size=3),
             nn.ReLU(),
@@ -36,7 +38,7 @@ class YOLOv1(nn.Module):
             nn.Linear(1024, 4096),
             nn.Dropout(0.5),
             nn.ReLU(),
-            nn.Linear(4096, grid * grid * (n_class + b_box * 5)),
+            nn.Linear(4096, S * S * (C + B * 5)),
         )
 
     def forward(self, x):
