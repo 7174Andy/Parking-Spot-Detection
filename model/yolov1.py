@@ -8,6 +8,7 @@ from torchvision import models
 from torch.utils import model_zoo
 # from detectron2 import model_zoo
 
+
 # Utilizing the DarkNet architecture as a base for YOLOv1
 class YOLOv1(nn.Module):
     def __init__(self, S, B, C):
@@ -53,5 +54,6 @@ class YOLOv1(nn.Module):
                 initial_weight = self.get_upsampling_weight(
                     m.in_channels, m.out_channels, m.kernel_size[0])
                 m.weight.data.copy_(initial_weight)    
+
 
         
