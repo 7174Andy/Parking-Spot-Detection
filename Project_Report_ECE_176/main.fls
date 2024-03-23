@@ -662,6 +662,16 @@ INPUT ./figs/percision-confidence.png
 INPUT figs/percision-confidence.png
 INPUT ./figs/percision-confidence.png
 INPUT ./figs/percision-confidence.png
+INPUT ./figs/inference1.png
+INPUT ./figs/inference1.png
+INPUT figs/inference1.png
+INPUT ./figs/inference1.png
+INPUT ./figs/inference1.png
+INPUT ./figs/inference2.png
+INPUT ./figs/inference2.png
+INPUT figs/inference2.png
+INPUT ./figs/inference2.png
+INPUT ./figs/inference2.png
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT ./main.bbl

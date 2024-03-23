@@ -60,7 +60,8 @@
     model, CNN is implemented to annoatate the avaiblable parking spot. During
     implementation, we used the dataset for image-based parking space occupancy to collect data for parking structure
     to train the architecture. We will display the resulting image, the overall accuracy,
-    and the loss of the model. 
+    and the loss of the model. The model can accurately detect the parking spot and determine whether the 
+    spot is empty or not. 
     
 
 \end{abstract}
@@ -129,7 +130,7 @@ For the dataset, Parking Space Image Dataset is used. The dataset consists of pa
 
 \subsection{Results}
 
-The following figures are the results after training the model: 
+The following figures are the results after training the model with a learning rate of $0.001$ and with Adam optimizer with 5 epoch: 
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/loss-function.png}
@@ -142,21 +143,17 @@ The following figures are the results after training the model:
     \caption{Recall-Confidence Graph (left) and Confidence-Percision Graph (right) }
 \end{figure*}
 
-In this section, You should include the following things:
+\pagebreak
 
-\begin{itemize}
-    \item the datasets you use:
-        \subitem the brief introduction of the dataset
-        \subitem the data format
-        \subitem other information related to your experiments
-    \item your results
-    \item ablation study on training your networks, how does the method work with more or less data, with/without some components (optional)
-\end{itemize}
+The inference image is shown below using the same model. 
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figs/inference1.png}
+    \includegraphics[width=0.45\textwidth]{figs/inference2.png}
+    \caption{Inference Image}
+\end{figure*}
 
 
-\section{Supplementary Material}
-
-You should also include a video recording a presentation (with motivation, approach, results) for this project. 
 
 \bibliographystyle{plain}
 \bibliography{bibliography.bib}

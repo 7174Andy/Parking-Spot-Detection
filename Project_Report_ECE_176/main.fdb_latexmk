@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1711175192 "main.aux" "main.bbl" "main" 1711175193 0
+["bibtex main"] 1711176244 "main.aux" "main.bbl" "main" 1711176322 0
   "./bibliography.bib" 1711174258 1173 d7ee4eee657b9453fccb4a4f8b26fec2 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1711175193 2483 76fd02726202d7f8625bf803008822ef "pdflatex"
+  "main.aux" 1711176321 2490 9a9d12b7879b7f6b186ba59032dc9e81 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1711175192 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711175193 0
-  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711175191 9770 9e24a2079e1798dd9f9cf3754a2aa5d0 ""
+["pdflatex"] 1711176321 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711176322 0
+  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711176320 9635 776489d51b400f639cf4ab0d92f027a6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -104,13 +104,15 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700360044 7883464 c5f048a159ffbb5241c94fe1f9f6961d ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "figs/Screenshot 2024-03-22 at 21.55.19.png" 1711174258 78559 cb0678a0cbd8a18c115e6c2b4189a55b ""
+  "figs/inference1.png" 1711176142 1151238 69d3c7da9a1c78d55a028f4182cdfb89 ""
+  "figs/inference2.png" 1711176140 1046834 3a91e4bef6ba1ae16d2ba6a3ca2c7982 ""
   "figs/loss-function.png" 1711174794 140677 00d16777aa7480a8aeaf56497b22424c ""
   "figs/percision-confidence.png" 1711174793 59524 e81a35157d91bd337d7de955f992f483 ""
   "figs/recall-confidence.png" 1711174792 73321 a4fb0e170bf303f755e2d91b2b3e7c68 ""
-  "main.aux" 1711175193 2483 76fd02726202d7f8625bf803008822ef "pdflatex"
-  "main.bbl" 1711175192 591 02642da5135afbd1ba5bebb7b23ea85b "bibtex main"
-  "main.out" 1711175193 802 2fbdac872a4271a8a8b2b6b4cd6b88f0 "pdflatex"
-  "main.tex" 1711175191 9770 9e24a2079e1798dd9f9cf3754a2aa5d0 ""
+  "main.aux" 1711176321 2490 9a9d12b7879b7f6b186ba59032dc9e81 "pdflatex"
+  "main.bbl" 1711176244 591 02642da5135afbd1ba5bebb7b23ea85b "bibtex main"
+  "main.out" 1711176321 646 4b2cc77bbe08ba7609b4cba12a0fd4b5 "pdflatex"
+  "main.tex" 1711176320 9635 776489d51b400f639cf4ab0d92f027a6 ""
   "neurips_2020.sty" 1653961648 11204 129041f8a44f0dbbba34284ed200c8b0 ""
   (generated)
   "main.aux"

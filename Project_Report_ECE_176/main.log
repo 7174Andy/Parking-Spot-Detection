@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.18)  22 MAR 2024 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.18)  22 MAR 2024 23:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -398,47 +398,61 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-<figs/Screenshot 2024-03-22 at 21.55.19.png, id=57, 575.14874pt x 253.94875pt>
+<figs/Screenshot 2024-03-22 at 21.55.19.png, id=53, 575.14874pt x 253.94875pt>
 File: figs/Screenshot 2024-03-22 at 21.55.19.png Graphic file (type png)
 <use figs/Screenshot 2024-03-22 at 21.55.19.png>
-Package pdftex.def Info: figs/Screenshot 2024-03-22 at 21.55.19.png  used on input line 112.
+Package pdftex.def Info: figs/Screenshot 2024-03-22 at 21.55.19.png  used on input line 113.
 (pdftex.def)             Requested size: 357.73405pt x 157.95808pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 121.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 122.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2 <./figs/Screenshot 2024-03-22 at 21.55.19.png>]
-<figs/loss-function.png, id=70, 983.17313pt x 490.83376pt>
+<figs/loss-function.png, id=66, 983.17313pt x 490.83376pt>
 File: figs/loss-function.png Graphic file (type png)
 <use figs/loss-function.png>
-Package pdftex.def Info: figs/loss-function.png  used on input line 135.
+Package pdftex.def Info: figs/loss-function.png  used on input line 136.
 (pdftex.def)             Requested size: 357.73405pt x 178.59485pt.
-<figs/recall-confidence.png, id=71, 736.25063pt x 490.08093pt>
+<figs/recall-confidence.png, id=67, 736.25063pt x 490.08093pt>
 File: figs/recall-confidence.png Graphic file (type png)
 <use figs/recall-confidence.png>
-Package pdftex.def Info: figs/recall-confidence.png  used on input line 140.
+Package pdftex.def Info: figs/recall-confidence.png  used on input line 141.
 (pdftex.def)             Requested size: 178.86702pt x 119.0576pt.
-<figs/percision-confidence.png, id=72, 737.00343pt x 491.58656pt>
+<figs/percision-confidence.png, id=68, 737.00343pt x 491.58656pt>
 File: figs/percision-confidence.png Graphic file (type png)
 <use figs/percision-confidence.png>
-Package pdftex.def Info: figs/percision-confidence.png  used on input line 141.
+Package pdftex.def Info: figs/percision-confidence.png  used on input line 142.
 (pdftex.def)             Requested size: 178.86702pt x 119.30336pt.
- (./main.bbl [3 <./figs/loss-function.png> <./figs/recall-confidence.png> <./figs/percision-confidence.png>]) [4] (./main.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./figs/loss-function.png> <./figs/recall-confidence.png> <./figs/percision-confidence.png>]
+<figs/inference1.png, id=78, 493.0922pt x 493.845pt>
+File: figs/inference1.png Graphic file (type png)
+<use figs/inference1.png>
+Package pdftex.def Info: figs/inference1.png  used on input line 151.
+(pdftex.def)             Requested size: 178.86702pt x 179.14044pt.
+<figs/inference2.png, id=79, 491.58656pt x 493.0922pt>
+File: figs/inference2.png Graphic file (type png)
+<use figs/inference2.png>
+Package pdftex.def Info: figs/inference2.png  used on input line 152.
+(pdftex.def)             Requested size: 178.86702pt x 179.41661pt.
+ (./main.bbl) [4 <./figs/inference1.png> <./figs/inference2.png>] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2FBDAC872A4271A8A8B2B6B4CD6B88F0;802.
+(rerunfilecheck)             Checksum: 4B2CC77BBE08BA7609B4CBA12A0FD4B5;646.
  ) 
 Here is how much of TeX's memory you used:
- 11730 strings out of 476025
- 189925 string characters out of 5790016
- 1863388 words of memory out of 5000000
- 31884 multiletter control sequences out of 15000+600000
- 536063 words of font info for 120 fonts, out of 8000000 for 9000
+ 11746 strings out of 476025
+ 190258 string characters out of 5790016
+ 1864388 words of memory out of 5000000
+ 31895 multiletter control sequences out of 15000+600000
+ 536193 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,76p,1065b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,76p,1065b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 367782 bytes).
+Output written on main.pdf (4 pages, 2367270 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  20 named destinations out of 1000 (max. 500000)
- 28245 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 28247 words of extra memory for PDF output out of 29859 (max. 10000000)
 
