@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1711147699 "main.aux" "main.bbl" "main" 1711147798 0
-  "./bibliography.bib" 1711147361 844 3dd92351ebbe2857f6c22d6c61f48ed5 ""
+["bibtex main"] 1711158757 "main.aux" "main.bbl" "main" 1711159564 0
+  "./bibliography.bib" 1711156066 1173 d7ee4eee657b9453fccb4a4f8b26fec2 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1711147798 1337 665e64640773df6fb45da5d64d963875 "pdflatex"
+  "main.aux" 1711159564 1620 1c492265583508ea17e2fafd75b45eb6 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1711147798 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711147798 0
-  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711147797 4973 f107ef344e07249058793554b53c17ed ""
+["pdflatex"] 1711159563 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711159564 0
+  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711159563 6630 5345b36fe3ba68017bde2fa700742560 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -91,10 +91,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700360065 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700360044 7883464 c5f048a159ffbb5241c94fe1f9f6961d ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "main.aux" 1711147798 1337 665e64640773df6fb45da5d64d963875 "pdflatex"
-  "main.bbl" 1711147699 400 b6645cd5fcb6a9ad3288242225e36c8b "bibtex main"
-  "main.out" 1711147798 536 3917e2c486a85fe082acff3cfa39393f "pdflatex"
-  "main.tex" 1711147797 4973 f107ef344e07249058793554b53c17ed ""
+  "main.aux" 1711159564 1620 1c492265583508ea17e2fafd75b45eb6 "pdflatex"
+  "main.bbl" 1711158757 591 02642da5135afbd1ba5bebb7b23ea85b "bibtex main"
+  "main.out" 1711159564 536 3917e2c486a85fe082acff3cfa39393f "pdflatex"
+  "main.tex" 1711159563 6630 5345b36fe3ba68017bde2fa700742560 ""
   "neurips_2020.sty" 1653961648 11204 129041f8a44f0dbbba34284ed200c8b0 ""
   (generated)
   "main.aux"

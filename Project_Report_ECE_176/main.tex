@@ -26,7 +26,7 @@
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 
-\title{Project Report - ECE 176}
+\title{YOLO-Vacant Parking Spot Detector}
 
 % The \author macro works with any number of authors. There are two commands
 % used to separate the names and addresses of multiple authors: \And and \AND.
@@ -65,8 +65,8 @@ Finding a vacant parking space in a given lot is a tedious and costly task: a pe
 waste gasoline and time while searching for a parking space. Furtermore, this will cause congestion in the parking lot. Therefore, by displaying the occupancy of spaces in a given parking lot
 will significantly reduce the time cost, traffic congestion, and gasoline consumption. YOLO-Parking will aid this wasteful process by displaying vacant and
 occupied parking spaces. Although there are existing methods to detect the occupancy of a parking space, such as car detector on every parking space and other object detector architectures 
-that detects the occupancy, most of them are expensive or slow in detecting parking spots\cite{DBLP:journals/corr/abs-2107-12207}. Furthermore, there are several traditional models like R-CNN and 
-Faster R-CNN models to detect the instance segmentation of a vacant parking spot, but they are slow in detection for videos. 
+that detects the occupancy, most of them are expensive or slow in detecting parking spots\cite{DBLP:journals/corr/abs-2107-12207}. Furthermore, there are several traditional models  models 
+to detect the instance segmentation of a vacant parking spot, but they are slow in detection for videos. 
 
 In this paper, we propose a new model to detect vacant parking spots: You Only Look Once (YOLO). YOLO architecture is one of the fastest architecture that accurately performs object detection \cite{redmon2016look}. 
 Additionally, several cameras mounted in the parking lot to detect vacancy of a space is relatively cheaper than placing a car detector on every parking space in a parking lot \cite{DBLP:journals/corr/abs-2107-12207}. 
@@ -75,7 +75,17 @@ Additionally, several cameras mounted in the parking lot to detect vacancy of a 
 
 \section{Related Work}
 
-You can describe the works related to you method in this section. You should at least mention two to three papers that are related to your project and how they are related.
+\textbf{R-CNN} \quad R-CNN \cite{DBLP:journals/corr/abs-2107-12207} is a widely used object detecting CNN model with relatively high accuracy. The first step is to regional proposal using selective search methods to propose bounding box. 
+Then, for each region proposal, the model warped the propsed regions to use them as inputs for a convolutional neural network. The CNN classifies eacn input proposed region using SVM specific to a class \cite{girshick2014rich}. 
+However, the training rate is slow due to large number of parameters to learn, and the inference rate is also slow. In one of the previous approaches in detecting parking spots, Martin Marek proposed R-CNN: the model first pool 
+proposed parking spot patches in the original image and then a CNN produces a binary output whether the space in each patch is occupied or not \cite{DBLP:journals/corr/abs-2107-12207}. The authors provided two methods for pooling
+for the first step in R-CNN: the interpolation of pixels to construct quadrilateral bounding boxes and construction of minimal bounding boxes \cite{DBLP:journals/corr/abs-2107-12207}. 
+
+\textbf{Faster R-CNN FPN} The input image first undergoes a feature pyramid network (FPN). Then, the authors extract the features of the parking spots and pass them through respective classification head for classification. However, 
+the input image must be resized, thus limiting the output image from being full resolution \cite{DBLP:journals/corr/abs-2107-12207}. Both R-CNN and R-CNN is still slow in inference for object detection in videos. Faster R-CNN can use
+one of the two methods of pooling mentioned above \cite{DBLP:journals/corr/abs-2107-12207}. 
+
+These two models are merely the baseline of parking vacancy object detector using CNN. In this paper, we intend to improve the model in inference time by using YOLO model. 
 
 \section{Method}
 
