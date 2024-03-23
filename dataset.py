@@ -78,7 +78,7 @@ class ParkingSpotDataset(Dataset):
         image.shape[0]
         bboxes = self.bboxes[idx].clone()
         labels = self.labels[idx].clone()
-
+        visualization.plot_image(image_original, bboxes, labels)
         label_matrix = self.to_label_matrix(image, bboxes, labels)
         return image, label_matrix
 
