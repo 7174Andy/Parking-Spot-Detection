@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1711173789 "main.aux" "main.bbl" "main" 1711173822 0
-  "./bibliography.bib" 1711156066 1173 d7ee4eee657b9453fccb4a4f8b26fec2 ""
+["bibtex main"] 1711175192 "main.aux" "main.bbl" "main" 1711175193 0
+  "./bibliography.bib" 1711174258 1173 d7ee4eee657b9453fccb4a4f8b26fec2 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1711173821 2166 45936f991bacf605c431262933a77d85 "pdflatex"
+  "main.aux" 1711175193 2483 76fd02726202d7f8625bf803008822ef "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1711173821 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711173822 0
-  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711173821 9270 d178384609c3dec5db3e5c410c66fe87 ""
+["pdflatex"] 1711175192 "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" "main.pdf" "main" 1711175193 0
+  "/Users/andrewpark/Parking-Spot-Detection/Project_Report_ECE_176/main.tex" 1711175191 9770 9e24a2079e1798dd9f9cf3754a2aa5d0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -103,11 +103,14 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700360065 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700360044 7883464 c5f048a159ffbb5241c94fe1f9f6961d ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "figs/Screenshot 2024-03-22 at 21.55.19.png" 1711169736 78559 cb0678a0cbd8a18c115e6c2b4189a55b ""
-  "main.aux" 1711173821 2166 45936f991bacf605c431262933a77d85 "pdflatex"
-  "main.bbl" 1711173789 591 02642da5135afbd1ba5bebb7b23ea85b "bibtex main"
-  "main.out" 1711173821 802 2fbdac872a4271a8a8b2b6b4cd6b88f0 "pdflatex"
-  "main.tex" 1711173821 9270 d178384609c3dec5db3e5c410c66fe87 ""
+  "figs/Screenshot 2024-03-22 at 21.55.19.png" 1711174258 78559 cb0678a0cbd8a18c115e6c2b4189a55b ""
+  "figs/loss-function.png" 1711174794 140677 00d16777aa7480a8aeaf56497b22424c ""
+  "figs/percision-confidence.png" 1711174793 59524 e81a35157d91bd337d7de955f992f483 ""
+  "figs/recall-confidence.png" 1711174792 73321 a4fb0e170bf303f755e2d91b2b3e7c68 ""
+  "main.aux" 1711175193 2483 76fd02726202d7f8625bf803008822ef "pdflatex"
+  "main.bbl" 1711175192 591 02642da5135afbd1ba5bebb7b23ea85b "bibtex main"
+  "main.out" 1711175193 802 2fbdac872a4271a8a8b2b6b4cd6b88f0 "pdflatex"
+  "main.tex" 1711175191 9770 9e24a2079e1798dd9f9cf3754a2aa5d0 ""
   "neurips_2020.sty" 1653961648 11204 129041f8a44f0dbbba34284ed200c8b0 ""
   (generated)
   "main.aux"
