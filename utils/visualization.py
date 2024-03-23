@@ -89,6 +89,7 @@ def get_bboxes(
         labels = labels.to(device)
 
         with torch.no_grad():
+
             predictions = model(x)
 
         batch_size = x.shape[0]

@@ -5,6 +5,7 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+from utils import visualization
 
 
 class ParkingSpotDataset(Dataset):
@@ -70,13 +71,15 @@ class ParkingSpotDataset(Dataset):
 
     def __getitem__(self, idx):
         image_name = self.image_names[idx]
-        image = cv2.imread(os.path.join(self.data_dir, image_name), cv2.IMREAD_COLOR)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
+        print(image_name)
+        image_original = cv2.imread(os.path.join(self.data_dir, image_name))
+        image = cv2.cvtColor(image_original, cv2.COLOR_BGR2RGB).astype(np.float32)
+        image.resize((self.image_size, self.image_size))
+        image.shape[0]
         bboxes = self.bboxes[idx].clone()
         labels = self.labels[idx].clone()
-
+        visualization.plot_image(image_original, bboxes, labels)
         label_matrix = self.to_label_matrix(image, bboxes, labels)
-
         return image, label_matrix
 
 

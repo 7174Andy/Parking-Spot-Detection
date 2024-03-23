@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{girshick2014rich}
+Ross Girshick, Jeff Donahue, Trevor Darrell, and Jitendra Malik.
+\newblock Rich feature hierarchies for accurate object detection and semantic segmentation, 2014.
+
+\bibitem{DBLP:journals/corr/abs-2107-12207}
+Martin Marek.
+\newblock Image-based parking space occupancy classification: Dataset and baseline.
+\newblock {\em CoRR}, abs/2107.12207, 2021.
+
+\bibitem{redmon2016look}
+Joseph Redmon, Santosh Divvala, Ross Girshick, and Ali Farhadi.
+\newblock You only look once: Unified, real-time object detection, 2016.
+
+\end{thebibliography}
